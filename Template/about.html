@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+{% block class %}class="sub_page"{% endblock class %}
+
+{% block about_status %}active{% endblock about_status %}
+
+{% block main %}
+  <!-- about section -->
+  <section class="about_section layout_padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="img-box">
+            <img src="{% static 'images/about-img.png' %}" alt="About The Noble Ox Restaurant" class="img-fluid">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h2>We Are The Noble Ox</h2>
+            </div>
+            <div class="about-content">
+              {% if data %}
+                {% for item in data %}
+                  <div class="description-block">
+                    {{ item.Description|safe }}
+                  </div>
+                {% endfor %}
+              {% else %}
+                <div class="alert alert-info">
+                  No about information available yet.
+                </div>
+              {% endif %}
+            </div>
+            {% if user.is_staff %}
+              <a href="{% url 'admin:Base_App_aboutus_add' %}" class="btn btn-primary mt-3">
+                Add About Info
+              </a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end about section -->
+{% endblock main %}
