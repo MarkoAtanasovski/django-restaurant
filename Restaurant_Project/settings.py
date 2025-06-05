@@ -28,7 +28,12 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'fallback-secret-key-for-dev')
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
 
-ALLOWED_HOSTS = ['django-restaurant-zhh6.onrender.com']
+ALLOWED_HOSTS = [
+    'your-app-name.onrender.com',  # add your Render URL here
+    'localhost',
+    '127.0.0.1',
+]
+
 
 
 
