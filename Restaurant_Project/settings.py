@@ -29,7 +29,7 @@ DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
 
 ALLOWED_HOSTS = [
-    'your-app-name.onrender.com',  # add your Render URL here
+    'django-restaurant-zhh6.onrender.com',  # add your Render URL here
     'localhost',
     '127.0.0.1',
 ]
